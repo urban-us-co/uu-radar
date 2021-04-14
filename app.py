@@ -27,9 +27,7 @@ fig.add_trace(go.Sunburst(
 
 fig.update_layout(
     grid= dict(columns=2, rows=1),
-    margin = dict(t=0, l=0, r=0, b=5),
-    uniformtext = dict(minsize=20, mode='hide')
-
+    margin = dict(t=0, l=0, r=0, b=0)
 )
 
 #fig.show()
