@@ -10,10 +10,10 @@ color1='darkred'
 color2='orange'
 mytitle='UU Radar'
 tabtitle='...'
-myheading='Urban Us Radar'
+myheading='Scope Emissions and Resilience Solutions Radar'
 
 
-df1 = pd.read_csv('https://storage.googleapis.com/uu_public/radar_data4.csv')
+df1 = pd.read_csv('https://storage.googleapis.com/uu_public/radar_data8.csv')
 
 fig = go.Figure()
 
@@ -21,7 +21,10 @@ fig.add_trace(go.Sunburst(
     ids=df1.ids,
     labels=df1.labels,
     parents=df1.parents,
-    domain=dict(column=0)
+    customdata=df1.descriptions,
+    name='',
+    domain=dict(column=0),
+    hovertemplate = '<b>%{label} - %{customdata}</b><br>'
 ))
 
 
