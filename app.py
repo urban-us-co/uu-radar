@@ -1,44 +1,36 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
-import plotly.graph_objs as go
+import plotly.graph_objects as go
+
+import pandas as pd
 
 ########### Define your variables
-beers=['Chesapeake Stout', 'Snake Dog IPA', 'Imperial Porter', 'Double Dog IPA']
-ibu_values=[35, 60, 85, 75]
-abv_values=[5.4, 7.1, 9.2, 4.3]
 color1='darkred'
 color2='orange'
-mytitle='Beer Comparison'
-tabtitle='beer!'
-myheading='Flying Dog Beers'
-label1='IBU'
-label2='ABV'
-githublink='https://github.com/austinlasseter/flying-dog-beers'
-sourceurl='https://www.flyingdog.com/beers/'
+mytitle='UU Radar'
+tabtitle='...'
+myheading='Urban Us Radar'
 
-########### Set up the chart
-bitterness = go.Bar(
-    x=beers,
-    y=ibu_values,
-    name=label1,
-    marker={'color':color1}
-)
-alcohol = go.Bar(
-    x=beers,
-    y=abv_values,
-    name=label2,
-    marker={'color':color2}
-)
 
-beer_data = [bitterness, alcohol]
-beer_layout = go.Layout(
-    barmode='group',
-    title = mytitle
+df1 = pd.read_csv('https://storage.googleapis.com/uu_public/radar_data4.csv')
+
+fig = go.Figure()
+
+fig.add_trace(go.Sunburst(
+    ids=df1.ids,
+    labels=df1.labels,
+    parents=df1.parents,
+    domain=dict(column=0)
+))
+
+
+fig.update_layout(
+    grid= dict(columns=2, rows=1),
+    margin = dict(t=0, l=0, r=0, b=0)
 )
 
-beer_fig = go.Figure(data=beer_data, layout=beer_layout)
-
+#fig.show()
 
 ########### Initiate the app
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
@@ -50,12 +42,11 @@ app.title=tabtitle
 app.layout = html.Div(children=[
     html.H1(myheading),
     dcc.Graph(
-        id='flyingdog',
-        figure=beer_fig
+        id='uu-radar',
+        figure=fig
     ),
-    html.A('Code on Github', href=githublink),
+    html.A('Urban Us', href='https://urban.us'),
     html.Br(),
-    html.A('Data Source', href=sourceurl),
     ]
 )
 
