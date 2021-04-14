@@ -21,7 +21,8 @@ fig.add_trace(go.Sunburst(
     ids=df1.ids,
     labels=df1.labels,
     parents=df1.parents,
-    domain=dict(column=0)
+    domain=dict(column=0),
+    insidetextorientation='radial'
 ))
 
 
