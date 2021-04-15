@@ -55,11 +55,6 @@ app.layout = html.Div(style={'width': '100%'}, children=[
         html.A('About Urban Us', href='https://urban.us'),
         html.Br(),
         html.Br(), 
-        html.Strong('Why Resilience?'),
-        html.Br(), 
-        'The biggest opportunities we see on the horizon are solutions for adaptation to “baked in” warming and the related weather, systems, and asset risks. This includes how we build Infrastructure so is the biggest area of investment and ROI that weighs against some of the biggest costs of innaction. ',
-        ]
-    ), html.Div(style={'margin-left': '25%' }, children=[
         html.Br(),
         html.H4('About this radar'),
         html.Br(),
@@ -67,7 +62,14 @@ app.layout = html.Div(style={'width': '100%'}, children=[
         html.Br(),        
         html.Br(),        
         "This is increasingly one of the most comon questions we get from industry partners and friends. We have now invested in dozens of solutions across different sides of the emissions equation, and many are either ready for wide adoption or already the Leader. We decided to build this radar as a reference but also an invitation to engage directly with these companies. And if you're a company or know a company we should invest in and list here, please let us know.",
-    ]) 
+        html.Br(),        
+        html.Br(),      
+        html.Strong('Why Resilience?'),
+        html.Br(), 
+        'The biggest opportunities we see on the horizon are solutions for adaptation to “baked in” warming and the related weather, systems, and asset risks. This includes how we build Infrastructure so is the biggest area of investment and ROI that weighs against some of the biggest costs of innaction. ',
+        ]
+    ), html.Div(style={'margin-left': '25%' }, children=[
+            ]) 
 ])
 
 if __name__ == '__main__':
