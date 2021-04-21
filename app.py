@@ -128,9 +128,10 @@ def display_click_data(clickData):
         jobs_text = "Jobs at "+item_name.replace(" ","&nbsp;")
         jobs_link = "https://jobs.urban.us/?q="+item_name.replace(" ","&nbsp;")
 
+    print(item_name)
+    print(item_desc)
+
     return """ 
-
-
 
             ### """+item_name+"""
 
