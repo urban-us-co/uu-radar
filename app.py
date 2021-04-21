@@ -78,9 +78,9 @@ app.layout = html.Div(style={}, children=[
             id='uu-radar-chart',
             figure=fig
         ),
-        html.A('About Scope Emissions', href='https://www.watershedclimate.com/blog/building-a-world-class-climate-program'),
+        html.A('About Scope Emissions', target='_blank', href='https://www.watershedclimate.com/blog/building-a-world-class-climate-program'),
         html.Br(),        
-        html.A('About Urban Us', href='https://urban.us'),
+        html.A('About Urban Us', target='_blank', href='https://urban.us'),
         html.Br(),
         html.Br(), 
         html.Br(),
