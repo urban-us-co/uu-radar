@@ -121,6 +121,8 @@ def display_click_data(clickData):
     url_link = ""
     jobs_text = ""
     jobs_link = ""
+    contact_text = ""
+    contact_link = ""
     item_id = clickData["points"][0]["id"]
     item_name = clickData["points"][0]["label"]
     item_desc = clickData["points"][0]["customdata"]
