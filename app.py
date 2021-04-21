@@ -18,6 +18,7 @@ myheading='Scope Emissions and Resilience Solutions Radar'
 
 
 df1 = pd.read_csv('https://storage.googleapis.com/uu_public/radar_data9.csv')
+#details = pd.read_json(url)
 
 #df2 = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/solar.csv')
 
@@ -95,7 +96,7 @@ app.layout = html.Div(style={}, children=[
                     dcc.Markdown("""
                         **How to use this chart**
 
-                        Click on any part of the graph to get more information (shown here) and to zoom in and change the center of the graph. Click on the center of the graph to zoom back out."
+                        Click on any part of the graph to get more information (shown here) and to zoom in and change the center of the graph. Click on the center of the graph to zoom back out.
                     """),
                     html.Br(), 
                     dcc.Markdown(id='show-data'),
