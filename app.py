@@ -17,11 +17,11 @@ tabtitle='...'
 myheading='Scope Emissions and Resilience Solutions Radar'
 
 
-df1 = pd.read_csv('https://storage.googleapis.com/uu_public/radar_data9.csv')
+df1 = pd.read_csv('https://raw.githubusercontent.com/urban-us-co/uu-radar/main/radar_data.csv')
 #details = pd.read_json(url)
 
 #df2 = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/solar.csv')
-
+print(df1)
 styles = {
     'pre': {
         'border': 'thin lightgrey solid',
