@@ -119,6 +119,7 @@ def display_click_data(clickData):
     url_link = ""
     jobs_text = ""
     jobs_link = ""
+    item_id = clickData["points"][0]["id"]
     item_name = clickData["points"][0]["label"]
     item_desc = clickData["points"][0]["customdata"]
     #print(companies_dict[item_name])
@@ -127,9 +128,11 @@ def display_click_data(clickData):
         url_link = companies_dict[item_name]
         jobs_text = "Jobs at "+item_name.replace(" ","&nbsp;")
         jobs_link = "https://jobs.urban.us/?q="+item_name.replace(" ","&nbsp;")
+        contact_text = "Get in touch with us about "+item_name
+        contact_link = "https://share.hsforms.com/1SNKBwhDaTjGHU5BAO2cFZQ10due?what_would_you_like_to_discuss_="""+item_name
 
-    print(item_name)
-    print(item_desc)
+    #print(item_name)
+    #print(clickData)
 
     return """ 
 
@@ -141,6 +144,8 @@ def display_click_data(clickData):
 
             ["""+jobs_text+"""]("""+jobs_link+""")
 
+            ["""+contact_text+"""]("""+contact_link+""")
+            
     """
 
 
