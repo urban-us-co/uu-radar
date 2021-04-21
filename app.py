@@ -91,7 +91,8 @@ app.layout = html.Div(style={}, children=[
         html.Strong('What are the available solutions for reaching our climate goals and how can we impliment them?'), 
         html.Br(),        
         html.Br(),        
-        "This is increasingly one of the most comon questions we get from industry partners and friends. We have now invested in dozens of solutions across different sides of the emissions equation, and many are either ready for wide adoption or already the Leader. We decided to build this radar as a reference but also an invitation to engage directly with these companies. And if you're a company or know a company we should invest in and list here, please let us know.",
+        "This is increasingly one of the most comon questions we get from industry partners and friends. We've invested in dozens of solutions across all sides of the emissions equation, and many are either ready for wide adoption or already the market leader. We built this radar as a reference but also an invitation to engage with these companies. And if you're a company or know a company we should invest in and list here, ",
+        html.A('please let us know.', target='_blank', href='https://share.hsforms.com/1SNKBwhDaTjGHU5BAO2cFZQ10due'),
         html.Br(),        
         html.Br(),      
     ]
@@ -115,7 +116,6 @@ app.layout = html.Div(style={}, children=[
     Output('show-data', 'children'),
     Input('uu-radar-chart', 'clickData'))
 def display_click_data(clickData):
-    #print(clickData)
     #print(1)
     url_text = ""
     url_link = ""
@@ -127,7 +127,7 @@ def display_click_data(clickData):
     item_name = clickData["points"][0]["label"]
     item_desc = clickData["points"][0]["customdata"]
     #print(companies_dict[item_name])
-    if len(companies_dict[item_name])>4:
+    if len(companies_dict[item_name])>2:
         url_text = companies_dict[item_name]
         url_link = companies_dict[item_name]
         jobs_text = "Jobs at "+item_name.replace(" ","&nbsp;")
