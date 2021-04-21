@@ -3,7 +3,6 @@ Scope 1,Scope 1,,"You own something—a car, a boiler, a smokestack—that direc
 Scope 2,Scope 2,,"You purchase electricity, which generated greenhouse gases while being produced (e.g. at a coal or natural gas plant). Examples: Purchasing electricity for your office or warehouse from a local utility.
 ",-1,
 Scope 3,Scope 3,,"Everything else. Divided into “upstream” emissions (from the production and transportation of products and services you purchase) and “downstream” emissions (emissions from your customers when they use and dispose of your product).
-
 Examples: Shopify considers the impact of transporting a product from a merchant to a consumer; Square measures the carbon emitted when merchants use electricity to power a Square Register; sweetgreen counts methane emitted producing cheese served in its salads.",-1,
 Resilience,Resilience,,"The biggest opportunities we see on the horizon are solutions for adaptation to “baked in” warming and the related weather, systems, and asset risks. This includes how we build Infrastructure so is the biggest area of investment and ROI that weighs against some of the biggest costs of innaction.
 ",-1,
@@ -17,13 +16,10 @@ Scope 2_Sustainable Energy,Sustainable Energy,Scope 2,"You purchase electricity,
 Scope 2_Energy Savings,Energy Savings,Scope 2,"You purchase electricity, which generated greenhouse gases while being produced (e.g. at a coal or natural gas plant). Examples: Purchasing electricity for your office or warehouse from a local utility.
 ",-1,
 Scope 3_Travel,Travel,Scope 3,"Everything else. Divided into “upstream” emissions (from the production and transportation of products and services you purchase) and “downstream” emissions (emissions from your customers when they use and dispose of your product).
-
 Examples: Shopify considers the impact of transporting a product from a merchant to a consumer; Square measures the carbon emitted when merchants use electricity to power a Square Register; sweetgreen counts methane emitted producing cheese served in its salads.",-1,
 Scope 3_Waste,Waste,Scope 3,"Everything else. Divided into “upstream” emissions (from the production and transportation of products and services you purchase) and “downstream” emissions (emissions from your customers when they use and dispose of your product).
-
 Examples: Shopify considers the impact of transporting a product from a merchant to a consumer; Square measures the carbon emitted when merchants use electricity to power a Square Register; sweetgreen counts methane emitted producing cheese served in its salads.",-1,
 Scope 3_T&D losses associated with purchased electricity,T&D losses associated with purchased electricity,Scope 3,"Everything else. Divided into “upstream” emissions (from the production and transportation of products and services you purchase) and “downstream” emissions (emissions from your customers when they use and dispose of your product).
-
 Examples: Shopify considers the impact of transporting a product from a merchant to a consumer; Square measures the carbon emitted when merchants use electricity to power a Square Register; sweetgreen counts methane emitted producing cheese served in its salads.",-1,
 Resilience_Disaster Modeling,Disaster Modeling,Resilience,"The biggest opportunities we see on the horizon are solutions for adaptation to “baked in” warming and the related weather, systems, and asset risks. This includes how we build Infrastructure so is the biggest area of investment and ROI that weighs against some of the biggest costs of innaction.
 ",-1,
@@ -65,19 +61,16 @@ Piloting_Scope 2_Energy Savings,Piloting,Scope 2_Energy Savings,Solutions ready 
 Scaling_Scope 2_Energy Savings,Scaling,Scope 2_Energy Savings,Solutions that are currently delivering value to multiple customers. ,-1,
 Leader_Scope 2_Energy Savings,Leader,Scope 2_Energy Savings,The proven best solutions in the space. ,-1,
 R&D_Scope 3_Travel,R&D,Scope 3_Travel,"Everything else. Divided into “upstream” emissions (from the production and transportation of products and services you purchase) and “downstream” emissions (emissions from your customers when they use and dispose of your product).
-
 Examples: Shopify considers the impact of transporting a product from a merchant to a consumer; Square measures the carbon emitted when merchants use electricity to power a Square Register; sweetgreen counts methane emitted producing cheese served in its salads.",-1,
 Piloting_Scope 3_Travel,Piloting,Scope 3_Travel,Solutions ready for the first innovative customers ,-1,
 Scaling_Scope 3_Travel,Scaling,Scope 3_Travel,Solutions that are currently delivering value to multiple customers. ,-1,
 Leader_Scope 3_Travel,Leader,Scope 3_Travel,The proven best solutions in the space. ,-1,
 R&D_Scope 3_Waste,R&D,Scope 3_Waste,"Everything else. Divided into “upstream” emissions (from the production and transportation of products and services you purchase) and “downstream” emissions (emissions from your customers when they use and dispose of your product).
-
 Examples: Shopify considers the impact of transporting a product from a merchant to a consumer; Square measures the carbon emitted when merchants use electricity to power a Square Register; sweetgreen counts methane emitted producing cheese served in its salads.",-1,
 Piloting_Scope 3_Waste,Piloting,Scope 3_Waste,Solutions ready for the first innovative customers ,-1,
 Scaling_Scope 3_Waste,Scaling,Scope 3_Waste,Solutions that are currently delivering value to multiple customers. ,-1,
 Leader_Scope 3_Waste,Leader,Scope 3_Waste,The proven best solutions in the space. ,-1,
 R&D_Scope 3_T&D losses associated with purchased electricity,R&D,Scope 3_T&D losses associated with purchased electricity,"Everything else. Divided into “upstream” emissions (from the production and transportation of products and services you purchase) and “downstream” emissions (emissions from your customers when they use and dispose of your product).
-
 Examples: Shopify considers the impact of transporting a product from a merchant to a consumer; Square measures the carbon emitted when merchants use electricity to power a Square Register; sweetgreen counts methane emitted producing cheese served in its salads.",-1,
 Piloting_Scope 3_T&D losses associated with purchased electricity,Piloting,Scope 3_T&D losses associated with purchased electricity,Solutions ready for the first innovative customers ,-1,
 Scaling_Scope 3_T&D losses associated with purchased electricity,Scaling,Scope 3_T&D losses associated with purchased electricity,Solutions that are currently delivering value to multiple customers. ,-1,
@@ -177,4 +170,4 @@ Near Space Labs,Near Space Labs,Scaling_Resilience_Infra Monitoring,stratospheri
 Roadbotics,Roadbotics,Scaling_Resilience_Infra Monitoring,road Infra monitoring,https://roadbotics.com/,
 Pi-lit,Pi-lit,Scaling_Resilience_Infra Monitoring,monitoring road Infra,https://pi-lit.com/,
 COORD,COORD,Scaling_Resilience_Infra Monitoring,curb management,https://www.coord.co,
-Park Diamond,Park Diamond,R&D_Resilience_Public Safety,micromobility safety,,
+Park Diamond,Park Diamond,R&D_Resilience_Public Safety,micromobility safety,https://www.park-and-diamond.com/,

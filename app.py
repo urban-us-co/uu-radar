@@ -21,7 +21,14 @@ df1 = pd.read_csv('https://raw.githubusercontent.com/urban-us-co/uu-radar/main/r
 #details = pd.read_json(url)
 
 #df2 = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/solar.csv')
-print(df1)
+
+df_dict = df1.to_dict(orient='records')
+
+companies_dict = dict()
+
+for i in df_dict:
+    companies_dict[i['labels']] = i['website_1']
+
 styles = {
     'pre': {
         'border': 'thin lightgrey solid',
@@ -85,10 +92,7 @@ app.layout = html.Div(style={}, children=[
         "This is increasingly one of the most comon questions we get from industry partners and friends. We have now invested in dozens of solutions across different sides of the emissions equation, and many are either ready for wide adoption or already the Leader. We decided to build this radar as a reference but also an invitation to engage directly with these companies. And if you're a company or know a company we should invest in and list here, please let us know.",
         html.Br(),        
         html.Br(),      
-        html.Strong('Why Resilience?'),
-        html.Br(), 
-        'The biggest opportunities we see on the horizon are solutions for adaptation to “baked in” warming and the related weather, systems, and asset risks. This includes how we build Infrastructure so is the biggest area of investment and ROI that weighs against some of the biggest costs of innaction. ',
-        ]
+    ]
     ), html.Div(children=[
             html.Div([
                     html.Br(),
@@ -109,15 +113,33 @@ app.layout = html.Div(style={}, children=[
     Output('show-data', 'children'),
     Input('uu-radar-chart', 'clickData'))
 def display_click_data(clickData):
-    print(clickData)
-    print(1)
+    #print(clickData)
+    #print(1)
+    url_text = ""
+    url_link = ""
+    jobs_text = ""
+    jobs_link = ""
+    item_name = clickData["points"][0]["label"]
+    item_desc = clickData["points"][0]["customdata"]
+    #print(companies_dict[item_name])
+    if len(companies_dict[item_name])>4:
+        url_text = companies_dict[item_name]
+        url_link = companies_dict[item_name]
+        jobs_text = "Jobs at "+item_name.replace(" ","&nbsp;")
+        jobs_link = "https://jobs.urban.us/?q="+item_name.replace(" ","&nbsp;")
+
     return """ 
 
 
 
-            ### """+clickData["points"][0]["label"]+"""
+            ### """+item_name+"""
 
-            """+clickData["points"][0]["customdata"]+"""
+            """+item_desc+"""
+
+            ["""+url_text+"""]("""+url_link+""")
+
+            ["""+jobs_text+"""]("""+jobs_link+""")
+
     """
 
 
