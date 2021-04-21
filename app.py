@@ -95,6 +95,13 @@ app.layout = html.Div(style={}, children=[
         html.A('please let us know.', target='_blank', href='https://share.hsforms.com/1SNKBwhDaTjGHU5BAO2cFZQ10due'),
         html.Br(),        
         html.Br(),      
+        html.Br(),        
+        html.Br(),  
+        html.Footer(children=[
+            "© 2021 ",
+            html.A('Urban Us.', target='_blank', href='https://urban.us/'),
+            " All Rights Reserved.",
+        ])    
     ]
     ), html.Div(children=[
             html.Div([
@@ -109,7 +116,7 @@ app.layout = html.Div(style={}, children=[
                     dcc.Markdown(id='show-data'),
                 ], className='')
         
-    ]) 
+    ]),
 ])
 
 @app.callback(
