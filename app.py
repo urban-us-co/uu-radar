@@ -12,8 +12,8 @@ import pandas as pd
 ########### Define your variables
 color1='darkred'
 color2='orange'
-mytitle='UU Radar'
-tabtitle='...'
+mytitle='Urban Us Radar'
+tabtitle='Urban Us Radar'
 myheading='Scope Emissions and Resilience Solutions Radar'
 
 
@@ -46,8 +46,7 @@ fig.add_trace(go.Sunburst(
     name='',
     domain=dict(column=0),
     #hovertemplate = '<b>%{label} - %{customdata}</b><br>',
-    insidetextorientation='radial'
-
+    insidetextorientation='radial',
 ))
 
 
@@ -61,8 +60,8 @@ fig.update_layout(
 #fig.show()
 
 ########### Initiate the app
-#external_stylesheets = ['https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cosmo/bootstrap.min.css']
-external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+external_stylesheets = ['https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cosmo/bootstrap.min.css']
+#external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 external_scripts = ['//js.hs-scripts.com/1697558.js']
 
@@ -72,52 +71,96 @@ app.title=tabtitle
 
 ########### Set up the layout
 
-
-app.layout = html.Div(style={}, children=[
-    html.Div(style={'width': '75%', 'height':'100%', 'float': 'left' }, children=[
-        html.H2(myheading, style={'textAlign': 'center'}),
-        dcc.Graph(
-            id='uu-radar-chart',
-            figure=fig
-        ),
-        html.A('About Scope Emissions', target='_blank', href='https://www.watershedclimate.com/blog/building-a-world-class-climate-program'),
-        html.Br(),        
-        html.A('About Urban Us', target='_blank', href='https://urban.us'),
-        html.Br(),
-        html.Br(), 
-        html.Br(),
-        html.H4('About this radar'),
-        html.Br(),
-        html.Strong('What are the available solutions for reaching our climate goals and how can we implement them?'), 
-        html.Br(),        
-        html.Br(),        
-        "This is increasingly one of the most common questions we get from industry partners and friends. We've invested in dozens of solutions across all sides of the emissions equation, and many are either ready for wide adoption or already the market leader. We built this radar as a reference but also as an invitation to engage with these companies. And if you're a company or know a company we should invest in and list here, ",
-        html.A('please let us know.', target='_blank', href='https://share.hsforms.com/1SNKBwhDaTjGHU5BAO2cFZQ10due'),
-        html.Br(),        
-        html.Br(),      
-        html.Br(),        
-        html.Br(),  
-        html.Footer(children=[
-            "© 2021 ",
-            html.A('Urban Us.', target='_blank', href='https://urban.us/'),
-            " All Rights Reserved.",
-        ])    
-    ]
-    ), html.Div(children=[
-            html.Div([
+info_card =  dbc.Row(dbc.Col([
+        html.Div([
                     html.Br(),
                     html.Br(), 
                     dcc.Markdown("""
                         **How to use this chart**
 
-                        Click on any part of the graph to get more information (shown here) and to zoom in and change the center of the graph. Click on the center of the graph to zoom back out.
+                        Click on any part of the graph to get more information (shown below) and to zoom in and change the center of the graph. Click on the center of the graph to zoom back out.
                     """),
                     html.Br(), 
-                    dcc.Markdown(id='show-data'),
-                ], className='')
-        
+                ], className=''),
+        dbc.Col(id='show-data'),
     ]),
-])
+)
+
+copy_text = dbc.Row(dbc.Col(
+        html.Div([
+                    
+            html.A('About Scope Emissions', target='_blank', href='https://www.watershedclimate.com/blog/building-a-world-class-climate-program'),
+            html.Br(),        
+            html.A('About Urban Us', target='_blank', href='https://urban.us'),
+            html.Br(),
+            html.Br(), 
+            html.Br(),
+            html.H4('About this radar'),
+            html.Br(),
+            html.Strong('What are the available solutions for reaching our climate goals and how can we implement them?'), 
+            html.Br(),        
+            html.Br(),        
+            "This is increasingly one of the most common questions we get from industry partners and friends. We've invested in dozens of solutions across all sides of the emissions equation, and many are either ready for wide adoption or already the market leader. We built this radar as a reference but also as an invitation to engage with these companies. And if you're a company or know a company we should invest in and list here, ",
+            html.A('please let us know.', target='_blank', href='https://share.hsforms.com/1SNKBwhDaTjGHU5BAO2cFZQ10due'),
+            html.Br(),        
+            html.Br(),      
+            html.Br(),        
+            html.Br(),  
+        ], className='')
+    ),
+)
+
+
+        
+
+           
+
+app.layout = dbc.Container(
+    [
+        html.H1(myheading, style={'textAlign': 'center'}),
+        html.Hr(),
+        dbc.Row(
+            [                
+                dbc.Col(
+                    dcc.Graph(
+                        id='uu-radar-chart',
+                        figure=fig,
+                        responsive=True
+                    ),md=8),
+                dbc.Col(info_card, md=4),
+            ],
+            align="center",
+        ),
+        dbc.Row(
+            [                
+                dbc.Col([
+                    html.Br(), 
+                    html.Br(),
+                ]),
+            ]
+        ),
+        dbc.Row(
+            [                
+                dbc.Col(copy_text, md=8),
+            ],
+            align="center",
+        ),
+        dbc.Row(
+            [                
+                dbc.Col([
+                    html.Br(), 
+                    html.Br(),
+                    html.Footer(children=[
+                        "© 2021 ",
+                        html.A('Urban Us.', target='_blank', href='https://urban.us/'),
+                        " All Rights Reserved.",
+                    ]) 
+                ], md=8),
+            ],
+        ),
+    ],
+    fluid=True,
+)
 
 @app.callback(
     Output('show-data', 'children'),
@@ -142,22 +185,34 @@ def display_click_data(clickData):
         contact_text = "Get in touch with us about "+item_name
         contact_link = "https://share.hsforms.com/1SNKBwhDaTjGHU5BAO2cFZQ10due?what_would_you_like_to_discuss_="""+item_name
 
+
+    return_card = dbc.Card(
+        [
+
+        dbc.CardBody(
+                    [
+                        html.H4(item_name, className="card-title"),
+                        html.P(item_desc,
+                            className="card-text",
+                        ),
+                        html.Br(),
+                        dbc.ListGroup(
+                            [
+                                dbc.ListGroupItem(html.A(url_text, target='_blank', href=url_link)),
+                                dbc.ListGroupItem(html.A(jobs_text, target='_blank', href=jobs_link)),
+                                dbc.ListGroupItem(html.A(contact_text, target='_blank', href=contact_link)),
+                            ]
+                        )
+                    ]
+                ),
+        ],
+        body=True,
+    )
+
     #print(item_name)
     #print(clickData)
 
-    return """ 
-
-            ### """+item_name+"""
-
-            """+item_desc+"""
-
-            ["""+url_text+"""]("""+url_link+""")
-
-            ["""+jobs_text+"""]("""+jobs_link+""")
-
-            ["""+contact_text+"""]("""+contact_link+""")
-            
-    """
+    return return_card
 
 
 
