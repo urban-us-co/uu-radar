@@ -88,7 +88,7 @@ app.layout = html.Div(style={}, children=[
         html.Br(),
         html.H4('About this radar'),
         html.Br(),
-        html.Strong('What are the available solutions for reaching our climate goals and how can we impliment them?'), 
+        html.Strong('What are the available solutions for reaching our climate goals and how can we implement them?'), 
         html.Br(),        
         html.Br(),        
         "This is increasingly one of the most comon questions we get from industry partners and friends. We've invested in dozens of solutions across all sides of the emissions equation, and many are either ready for wide adoption or already the market leader. We built this radar as a reference but also an invitation to engage with these companies. And if you're a company or know a company we should invest in and list here, ",
