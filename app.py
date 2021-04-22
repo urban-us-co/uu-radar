@@ -69,6 +69,41 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets, external_sc
 server = app.server
 app.title=tabtitle
 
+
+
+########## Custom index to enable google analytics and other things
+app.index_string = '''<!DOCTYPE html>
+<html>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCGG6BZ7VB"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-BCGG6BZ7VB');
+        </script>
+    <!-- End Global Google Analytics -->
+{%metas%}
+<title>{%title%}</title>
+{%favicon%}
+{%css%}
+</head>
+<body>
+{%app_entry%}
+<footer>
+{%config%}
+{%scripts%}
+{%renderer%}
+</footer>
+</body>
+</html>
+'''
+
+
+
+
 ########### Set up the layout
 
 info_card =  dbc.Row(dbc.Col([
