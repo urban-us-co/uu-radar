@@ -91,7 +91,7 @@ app.layout = html.Div(style={}, children=[
         html.Strong('What are the available solutions for reaching our climate goals and how can we implement them?'), 
         html.Br(),        
         html.Br(),        
-        "This is increasingly one of the most comon questions we get from industry partners and friends. We've invested in dozens of solutions across all sides of the emissions equation, and many are either ready for wide adoption or already the market leader. We built this radar as a reference but also an invitation to engage with these companies. And if you're a company or know a company we should invest in and list here, ",
+        "This is increasingly one of the most common questions we get from industry partners and friends. We've invested in dozens of solutions across all sides of the emissions equation, and many are either ready for wide adoption or already the market leader. We built this radar as a reference but also as an invitation to engage with these companies. And if you're a company or know a company we should invest in and list here, ",
         html.A('please let us know.', target='_blank', href='https://share.hsforms.com/1SNKBwhDaTjGHU5BAO2cFZQ10due'),
         html.Br(),        
         html.Br(),      
