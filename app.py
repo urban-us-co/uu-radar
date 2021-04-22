@@ -176,15 +176,23 @@ def display_click_data(clickData):
     item_id = clickData["points"][0]["id"]
     item_name = clickData["points"][0]["label"]
     item_desc = clickData["points"][0]["customdata"]
+    listGroup = ""
+
     #print(companies_dict[item_name])
     if len(companies_dict[item_name])>2:
         url_text = companies_dict[item_name]
         url_link = companies_dict[item_name]
-        jobs_text = "Jobs at "+item_name.replace(" ","&nbsp;")
-        jobs_link = "https://jobs.urban.us/?q="+item_name.replace(" ","&nbsp;")
+        jobs_text = "Jobs at "+item_name
+        jobs_link = "https://jobs.urban.us/?q="+item_name
         contact_text = "Get in touch with us about "+item_name
         contact_link = "https://share.hsforms.com/1SNKBwhDaTjGHU5BAO2cFZQ10due?what_would_you_like_to_discuss_="""+item_name
-
+        listGroup = dbc.ListGroup(
+                            [
+                                dbc.ListGroupItem(html.A(url_text, target='_blank', href=url_link)),
+                                dbc.ListGroupItem(html.A(jobs_text, target='_blank', href=jobs_link)),
+                                dbc.ListGroupItem(html.A(contact_text, target='_blank', href=contact_link)),
+                            ]
+                        )
 
     return_card = dbc.Card(
         [
@@ -196,13 +204,7 @@ def display_click_data(clickData):
                             className="card-text",
                         ),
                         html.Br(),
-                        dbc.ListGroup(
-                            [
-                                dbc.ListGroupItem(html.A(url_text, target='_blank', href=url_link)),
-                                dbc.ListGroupItem(html.A(jobs_text, target='_blank', href=jobs_link)),
-                                dbc.ListGroupItem(html.A(contact_text, target='_blank', href=contact_link)),
-                            ]
-                        )
+                        listGroup,
                     ]
                 ),
         ],
