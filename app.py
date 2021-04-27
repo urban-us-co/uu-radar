@@ -199,7 +199,7 @@ app.layout = dbc.Container(
                     ),md=8),
                 dbc.Col(info_card, md=4),
             ],
-            align="center",
+            align="start", justify="center"
         ),
         dbc.Row(
             [                
@@ -291,7 +291,7 @@ def display_click_data(clickData):
 
 @app.callback(
     dash.dependencies.Output('uu-radar-chart', 'figure'),
-    [dash.dependencies.Input('startup-dropdown', 'value')])
+    dash.dependencies.Input('startup-dropdown', 'value'))
 def update_graph(value):
     graph_data = df1
     if len(value) == 0:
