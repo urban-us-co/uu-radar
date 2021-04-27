@@ -18,6 +18,7 @@ import dash_bootstrap_components as dbc
 
 import json
 import pandas as pd
+import random
 
 ########### Define your variables
 color1='darkred'
@@ -45,6 +46,8 @@ for i in df_dict:
     if len(i['website_1']) > 2 and i['labels'] not in companies_list:
         companies_list.append(i['labels'])
         companies_options.append({'label': i['labels'], 'value': i['labels']})
+
+random.shuffle(companies_options)
 
 styles = {
     'pre': {
