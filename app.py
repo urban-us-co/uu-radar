@@ -163,7 +163,7 @@ info_card =  dbc.Row(dbc.Col([
 copy_text = dbc.Row(dbc.Col(
         html.Div([
                     
-            html.A('About Scope Emissions', target='_blank', href='https://www.watershedclimate.com/blog/building-a-world-class-climate-program'),
+            html.A('About Scope Emissions', target='_blank', href='https://www.epa.gov/greeningepa/greenhouse-gases-epa'),
             html.Br(),        
             html.A('About Urban Us', target='_blank', href='https://urban.us'),
             html.Br(),
